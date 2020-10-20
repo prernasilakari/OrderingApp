@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../common/header.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navigation.ejs')%>
+    <form method="POST">
+        <h1>Register</h1>
+        <input type ="text" name ="username" placeholder ="enter username">
+        <input type ="text" name ="email" placeholder ="enter email">
+        <input type ="password" name ="password" placeholder ="enter password">
+        <br>
+        <label>Continue as..</label>
+        <br>
+<input type="radio" id="admin" name="roles" value="admin">
+<label for="admin">Admin</label>
+<input type="radio" id="user" name="roles" value="user">
+<label for="user">User</label>
+<br>
+        <button type="submit">register</button>
+    </form>
+</body>
+</html>

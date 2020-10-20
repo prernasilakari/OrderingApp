@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../common/header.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../common/navigation.ejs')%>
+    <h1>
+        Add Products
+    </h1>
+   <form method = "POST">
+    
+       <label>Title</label>
+       <input type="text" name="title" id="title">
+       <label>Currency</label>
+       <input type="text" name="imgUrl" id="imgUrl">
+       <label>Price</label>
+       <input type="text" name="price" id="price">
+       <label>Description</label>
+       <input type="text" name="description" id="description">
+       <input type="submit">
+   </form>
+</body>
+</html>

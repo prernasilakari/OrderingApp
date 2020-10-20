@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../common/header.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+  
+    <%- include('../common/navigation.ejs')%>
+    <h1>Admin Products</h1>
+        <% if(prods.length > 0) { %>
+
+       <% for (let product of prods) { %>
+        <div>
+           <form>
+
+            Title:
+            <%= product.title%>  
+            <br>  
+            Currency:
+            <%=product.imgUrl%>
+            <br>
+            Price:
+            <%= product.price%>
+            <br>
+            Description
+            <%= product.description%>
+
+      
+        <a href= "/admin/edit-product/<%= product.id %>" type="submit">update</a>
+           </form>
+           <form action="/admin/delete" method="POST">
+            <input type="hidden" name="id" value="<%= product.id %>">
+            <button type ="submit">Delete</button>
+          
+        </form> 
+        <br>
+            <% } %>
+            
+        </div>
+      <% }  else { %>
+      
+        <% } %>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../common/header.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../common/navigation.ejs')%>
+   
+  <h1> All Products</h1> 
+    <% if(prods.length > 0) { %>
+
+        <% for (let product of prods) { %>
+         <div>
+            Title:
+        <%= product.title%><br>
+        Currency
+             <%=product.imgUrl%><br>
+             Price:
+             <%= product.price%><br>
+             Description
+                 <%= product.description%><br>
+                 <a href="/shop/product-detail/<%= product.id%>">details</a>
+                 <% if(isAuthenticated && roles=="user"){ %>
+                    <form action="/shop/orders" method="post">
+                        
+                        <input type="hidden" name="id" value="<%= product.id %>">
+                        <input type="hidden" name="price" value="<%= product.price %>">
+                        <input type="hidden" name="title" value="<%= product.title %>">
+                        <button class="btn" type="submit">Buy Now!</button>
+                       
+                    </form>
+                    <% } %>
+                    <br><br>
+                 
+             <% } %>
+         </div>
+       <% }  else { %>
+       
+         <% } %>
+</body>
+</html>

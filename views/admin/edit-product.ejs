@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../common/header.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../common/navigation.ejs')%>
+<h1>Edit Product</h1>
+<form method="POST">
+    <input type="text" name="title" value=<%= prods.title%>>  
+    <input type="text"  name="imgUrl" value=<%=prods.imgUrl%>>
+    <input type="text" name="price" value=<%= prods.price%>>
+    <input type="text" name="description" value=<%= prods.description%>>
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

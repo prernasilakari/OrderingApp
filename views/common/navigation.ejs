@@ -1,0 +1,22 @@
+<header class="main-header">
+    <nav class ="main-header__nav">
+        <ul class="main-header__item-list">
+<a href="/shop"> Shop </a> 
+<a href="/shop/product"> products </a> 
+<% if(!isAuthenticated){ %>
+<a href="/login"> login </a>
+<a href="/register"> Sign Up </a>
+<% } %>
+<% if(isAuthenticated && roles=="admin"){ %>
+<a href="/admin/add-product"> add product </a>
+<a href="/admin/admin-product"> admin product </a>
+<% } %>
+<% if(isAuthenticated && roles=="user"){ %>
+    <a href="/shop/orders"> Orders </a>
+    <% } %>
+<% if(isAuthenticated){ %>
+<a href="/logout"> logout </a>
+<% } %>
+</ul>
+</nav>
+</header>
